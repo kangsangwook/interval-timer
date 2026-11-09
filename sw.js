@@ -1,5 +1,5 @@
-const CACHE='teum-v3-assets';
-const ASSETS=['./','./index.html','./style.css?v=3','./app.js?v=3','./engine.js?v=3','./track.js?v=3','./manifest.webmanifest','./icon.svg','./apple-touch-icon.png'];
+const CACHE='teum-v4-foreground';
+const ASSETS=['./','./index.html','./style.css?v=4','./app.js?v=4','./engine.js?v=4','./manifest.webmanifest','./icon.svg','./apple-touch-icon.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('teum-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{
@@ -7,6 +7,6 @@ self.addEventListener('fetch',event=>{
   const url=new URL(event.request.url);
   if(!url.href.startsWith(self.registration.scope))return;
   const relative=url.pathname.slice(new URL(self.registration.scope).pathname.length);
-  if(!['','index.html','style.css','app.js','engine.js','track.js','manifest.webmanifest','icon.svg','apple-touch-icon.png'].includes(relative))return;
+  if(!['','index.html','style.css','app.js','engine.js','manifest.webmanifest','icon.svg','apple-touch-icon.png'].includes(relative))return;
   event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();event.waitUntil(caches.open(CACHE).then(cache=>cache.put(event.request,copy)));}return response;}).catch(()=>caches.match(event.request,{ignoreSearch:true})));
 });
