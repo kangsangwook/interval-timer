@@ -52,3 +52,5 @@
   .sound-row{flex-wrap:wrap;justify-content:center}.sound-controls{width:100%;justify-content:space-between}
   .timer-card{column-gap:10px}
 }
+.background-row{padding:12px 0;margin-bottom:10px}.experimental{display:inline-block;margin-left:5px;font-size:9px;font-weight:400;color:var(--accent);border:1px solid var(--line);padding:3px 5px;border-radius:5px}
+@media(max-width:700px) and (orientation:portrait){.background-row{grid-column:1/-1;min-height:34px;padding:0;margin:0;border:0}.background-row small{display:block;font-size:9px;margin-top:2px}.experimental{font-size:8px;padding:2px 4px}.tip-detail{display:block;font-size:9px;line-height:1.4;margin-top:2px}.tip p{line-height:1.3}}

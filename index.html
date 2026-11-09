@@ -36,12 +36,14 @@
         <div class="setting-row compact"><label for="prepare">시작 전 준비<small>5초 동안 자세를 잡아요</small></label><input class="toggle" id="prepare" type="checkbox" checked></div>
       </fieldset>
       <div class="setting-row compact sound-row"><label for="sound">전환 알림음</label><div class="sound-controls"><button id="test-sound" class="text-button">소리 확인 ♪</button><input class="toggle" id="sound" type="checkbox" checked></div></div>
+      <div class="setting-row compact background-row"><label for="background">잠금 중 오디오 <span class="experimental">시험 기능</span><small>작은 박자음 + 구간 알림 · 최대 60분</small></label><input class="toggle" id="background" type="checkbox" checked></div>
       <p id="error" class="error" role="alert"></p>
-      <div class="tip"><span aria-hidden="true">↗</span><p><strong>화면 잠금·앱 이동 시 자동 일시정지</strong><span class="tip-detail">화면을 켜두고 사용해 주세요. 돌아와서 이어 시작할 수 있어요.</span></p></div>
+      <div class="tip"><span aria-hidden="true">♪</span><p><strong id="mode-tip">잠금·앱 이동 중 오디오 재생 시도</strong><span class="tip-detail" id="mode-detail">시작 후 소리를 확인하세요. 다른 미디어·통화로 중단될 수 있어요. 탭 닫기·강제 종료는 지원하지 않아요.</span></p></div>
     </section>
   </div>
   <footer><p>Safari 공유 메뉴 → <strong>홈 화면에 추가</strong>하면 더 편해요.</p><p id="offline">첫 접속은 인터넷이 필요해요.</p></footer>
 </main>
+<audio id="workout-audio" preload="auto" playsinline></audio>
 <script type="module" src="./app.js"></script>
 </body>
 </html>
