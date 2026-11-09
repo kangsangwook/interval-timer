@@ -1,5 +1,5 @@
-import {makePlan, IntervalTimer} from './engine.js';
-import {makeTrack, stateAt, MAX_TRACK_SECONDS} from './track.js';
+import {makePlan, IntervalTimer} from './engine.js?v=3';
+import {makeTrack, stateAt, MAX_TRACK_SECONDS} from './track.js?v=3';
 const $=id=>document.getElementById(id);
 const inputs=['work','rest','sets','prepare','sound','background'];
 let timer=null, audio=null, wakeLock=null, wakeRequest=false, lastCount=null;
